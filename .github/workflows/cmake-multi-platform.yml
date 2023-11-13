@@ -31,12 +31,11 @@ jobs:
     - name: Build
       # Build your program with the given configuration. Note that --config is needed because the default Windows generator is a multi-config generator (Visual Studio generator).
       run: |
-      ./build_linux.sh
+        ./build_linux.sh archive
       shell: bash
-
-      - name: Upload Artifact
-        uses: actions/upload-artifact@v3
-        with:
-          name: Binaries
-          path: archive/*.tar.gz
-          retention-days: 30
+    - name: Upload Artifact
+      uses: actions/upload-artifact@v3
+      with:
+        name: Binaries
+        path: archive/*.tar.gz
+        retention-days: 30
