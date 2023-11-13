@@ -39,7 +39,3 @@ jobs:
         name: Binaries
         path: archive/*.tar.gz
         retention-days: 30
-    - name: Release Artifacts
-      uses: softprops/action-gh-release@v1
-      with:
-          files: Binaries
