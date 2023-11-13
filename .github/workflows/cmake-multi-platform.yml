@@ -39,3 +39,10 @@ jobs:
         name: Binaries
         path: archive/*.tar.gz
         retention-days: 30
+    - name: Release Artifacts
+      uses: softprops/action-gh-release@v1
+      if: startsWith(github.ref, 'refs/tags/')
+      with:
+          prerelease: true
+          draft: true
+          files: Binaries
