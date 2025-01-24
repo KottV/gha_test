@@ -18,9 +18,9 @@ jobs:
     - name: Build
       run: |
         ./build_linux.sh archive
+        echo "TIMESTAMP=`date '+%Y%m%d%H%M'`" >> $GITHUB_ENV
       shell: bash
     - name: Upload Artifact
-      run: echo "TIMESTAMP=`date '+%Y%m%d%H%M'`" >> $GITHUB_ENV
       uses: actions/upload-artifact@v4
       with:
         name: Binaries-${{ env.TIMESTAMP }}
